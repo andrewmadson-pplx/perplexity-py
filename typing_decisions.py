@@ -4,7 +4,7 @@ from perplexity.types import DecisionCreateResponse
 
 def decisions(client: Perplexity) -> DecisionCreateResponse:
     return client.decisions.create(
-        model="pplx-decider-v1.1-27b",
+        model="pplx-decider-latest",
         state={"review": "The battery stopped charging."},
         questions={
             "defect": {"type": "noul", "instructions": "Does this report a defect?"},
@@ -16,7 +16,7 @@ def decisions(client: Perplexity) -> DecisionCreateResponse:
 
 async def async_decisions(client: AsyncPerplexity) -> DecisionCreateResponse:
     return await client.decisions.create(
-        model="pplx-decider-v1.1-27b",
+        model="pplx-decider-latest",
         state="The battery stopped charging.",
         questions={"defect": {"type": "noul", "criteria": {"true": "Broken", "false": None}}},
     )
