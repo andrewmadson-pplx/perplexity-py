@@ -21,7 +21,7 @@ from perplexity.types import (
 )
 
 response = client.decisions.create(
-    model="pplx-decider-v1.1-27b",
+    model="pplx-decider-latest",
     state="The battery stopped charging.",
     questions={"defect": {"type": "noul", "instructions": "Does this report a defect?"}},
 )
